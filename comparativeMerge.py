@@ -26,7 +26,7 @@ def merge(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound):
             sec_items[index] = sec_aux[i]
             i += 1
 
-def merge_sort(pri_items, sec_items):
+def comparative_merge_sort(pri_items, sec_items):
     ''' docstring '''
     pri_aux = []
     sec_aux = []
