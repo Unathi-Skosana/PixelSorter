@@ -16,7 +16,7 @@ class PixelSorter(object):
 
     def sort_pixels(self):
         ''' docstring '''
-        image_feature_vector = IFV(self.sort_criteria)
+        image_feature_vector = IFV(self.image_name, self.sort_criteria)
         pixel_data = image_feature_vector.get_pixel_data()
         chroma_data = image_feature_vector.get_pixel_chroma_data()
         comparativeMerge.comparative_merge_sort(chroma_data, pixel_data)
