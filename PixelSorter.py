@@ -1,6 +1,6 @@
 ''' docstring '''
 
-import utils.ComparativeMerge as merge
+from utils.ComparativeMerge import comparative_merge_sort
 from utils.ImageFeatureVector import ImageFeatureVector as IFV
 
 class PixelSorter(object):
@@ -8,8 +8,9 @@ class PixelSorter(object):
     def __init__(self, image_name, sort_criteria):
         self.image_name = image_name
         self.sort_criteria = sort_criteria
+        self._validate_args()
 
-    def validate_args(self):
+    def _validate_args(self):
         ''' docstring '''
         if not (self.sort_criteria == 'C' or self.sort_criteria == 'L'):
             raise IOError
@@ -19,9 +20,8 @@ class PixelSorter(object):
         ifv           = IFV(self.image_name, self.sort_criteria)
         pixel_data    = ifv.get_pixel_data()
         criteria_data = ifv.get_criteria_data()
+        comparative_merge_sort(criteria_data, pixel_data)
 
-        merge.comparative_merge_sort(criteria_data, pixel_data)
-
-
-
-
+if __name__ == '__main__':
+    window = PixelSorter('./tests/test_cases/colorful.jpg', 'C')
+    window.sort_pixels()

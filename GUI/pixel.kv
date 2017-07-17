@@ -1,0 +1,27 @@
+<ViewPort>:
+   canvas:
+      Color:
+         rgb: (1, 1, 1)
+      Rectangle:
+         texture: self.texture
+         size: self.width + 20, self.height + 10
+         pos: self.x - 10, self.y - 10
+
+<GUI>:
+   canvas:
+   
+   Button:
+      font_size: 20
+      center_x: root.width / 4
+      top: 150
+      text: 'Start'
+      size: 80, 50
+
+   Button:
+      font_size: 20
+      center_x: root.width * 3 / 4
+      top: 150
+      text: 'Exit'
+      size: 80, 50
+
+      

@@ -20,7 +20,7 @@ class ImageFeatureVector(object):
             for rgb in self.pixel_data:
                 luminance = (rgb[0] * 0.3) + (rgb[1] * 0.59) + (rgb[2] * 0.11)
                 pixels_criteria.append(luminance)
-        else:
+        elif self.sort_criteria == 'C':
             for rgb in self.pixel_data:
                 chroma = max(rgb[0], rgb[1], rgb[2]) - min(rgb[0], rgb[1], rgb[2])
                 pixels_criteria.append(chroma)
@@ -32,7 +32,7 @@ class ImageFeatureVector(object):
 
     def get_pixel_data(self):
         ''' docstring '''
-        return self.pixel_data()
+        return self.pixel_data
 
     def get_image_name(self):
         ''' docstring '''
