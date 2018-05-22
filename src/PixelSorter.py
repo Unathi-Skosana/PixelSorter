@@ -2,6 +2,7 @@
 
 from ComparativeMerge import comparative_merge_sort
 from ImageFeatureVector import ImageFeatureVector as IFV
+from sys import argv, exit
 
 class PixelSorter(object):
     ''' docstring '''
@@ -20,10 +21,12 @@ class PixelSorter(object):
         ifv           = IFV(self.image_name, self.sort_criteria)
         pixel_data    = ifv.get_pixel_data()
         criteria_data = ifv.get_criteria_data()
-        print (criteria_data[0])
-
         comparative_merge_sort(criteria_data, pixel_data)
 
 if __name__ == '__main__':
-    window = PixelSorter('../tests/test_cases/colorful.jpg', 'C')
-    window.sort_pixels()
+    print len(argv)
+    if len(argv) == 3:
+        window = PixelSorter(argv[1], argv[2])
+        window.sort_pixels()
+    else:
+        exit('USAGE: python PixelSorter.py <image-path> <sort-criteria>')

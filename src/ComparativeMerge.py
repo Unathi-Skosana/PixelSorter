@@ -8,8 +8,6 @@ def merge(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound):
     i = lowerbound
     j = mid + 1
     for k in range(lowerbound, upperbound + 1):
-        print type(sec_aux[k])
-        print type(sec_items[k])
         pri_aux[k] = pri_items[k]
         sec_aux[k] = sec_items[k]
     for index in range(lowerbound, upperbound + 1):
@@ -32,8 +30,7 @@ def merge(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound):
 
 def comparative_merge_sort(pri_items, sec_items):
     ''' docstring '''
-    sort(pri_items, sec_items, zeros(len(pri_items), dtype='i,i,i'),\
-        zeros(len(pri_items), dtype='i,i,i'), 0, len(pri_items) - 1)
+    sort(pri_items, sec_items, zeros(len(pri_items), dtype=int), zeros(len(sec_items), dtype='i,i,i'), 0, len(pri_items) - 1)
     assert is_sorted(pri_items)
 
 def sort(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound):
