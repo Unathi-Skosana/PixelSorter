@@ -1,8 +1,9 @@
 '''Merge sort'''
-
+from numpy import zeros
 def merge(items, aux, lowerbound, upperbound):
     ''' docstring '''
     mid = int(lowerbound + (upperbound - lowerbound)/2)
+    less = lambda value_one, value_two: value_one > value_two
     i = lowerbound
     j = mid + 1
     for k in range(lowerbound, upperbound + 1):
@@ -23,12 +24,7 @@ def merge(items, aux, lowerbound, upperbound):
 
 def merge_sort(items):
     ''' docstring '''
-    aux = []
-    for i in range(len(items)):
-        aux.append(0)
-    upperbound = len(items) - 1
-    lowerbound = 0
-    sort(items, aux, lowerbound, upperbound)
+    sort(items, zeros((len(items),), dtype=float), 0, len(items) - 1)
     assert is_sorted(items)
 
 def sort(items, aux, lowerbound, upperbound):
@@ -46,7 +42,3 @@ def is_sorted(items):
         if items[i] < items[i-1]:
             return False
     return True
-
-def less(value_one, value_two):
-    ''' docstring '''
-    return value_one > value_two
