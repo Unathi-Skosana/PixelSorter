@@ -4,26 +4,26 @@ from PIL import Image
 
 class ImageFeatureVector(object):
     ''' docstring '''
-    def __init__(self, image_name, sort_criteria):
-        self.image_name           = image_name
+    def __init__(self, img_name, sort_criteria):
+        self.img_name             = img_name
         self.sort_criteria        = sort_criteria
         self.pixel_data           = None
         self.criteria_data        = None
-        self._process_image()
+        self.__process_img__()
 
-    def _process_image(self):
+    def __process_img__(self):
         ''' docstring '''
-        image = Image.open(self.image_name)
-        self.pixel_data = list(image.getdata())
+        img = Image.open(self.img_name)
+        lum = lambda r, g, b: r*0.3 + g*0.59 + b*0.11        # luminance
+        chr = lambda r, g, b: max(r, g, b) - min(r, g, b)    # chroma
+        self.pixel_data = list(img.getdata())
         pixels_criteria = []
         if self.sort_criteria == 'L':
             for rgb in self.pixel_data:
-                luminance = (rgb[0] * 0.3) + (rgb[1] * 0.59) + (rgb[2] * 0.11)
-                pixels_criteria.append(luminance)
+                pixels_criteria.append(lum(rgb[0], rgb[1], rgb[2]))
         elif self.sort_criteria == 'C':
             for rgb in self.pixel_data:
-                chroma = max(rgb[0], rgb[1], rgb[2]) - min(rgb[0], rgb[1], rgb[2])
-                pixels_criteria.append(chroma)
+                pixels_criteria.append(chr(rgb[0], rgb[1], rgb[2]))
         self.criteria_data = pixels_criteria
 
     def get_criteria_data(self):
@@ -36,4 +36,4 @@ class ImageFeatureVector(object):
 
     def get_image_name(self):
         ''' docstring '''
-        return self.image_name
+        return self.img_name
