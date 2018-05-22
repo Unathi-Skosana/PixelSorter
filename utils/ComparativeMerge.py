@@ -1,4 +1,5 @@
 ''' Module for comparative merge sorting '''
+from numpy import zeros, array
 
 def merge(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound):
     ''' docstring '''
@@ -28,14 +29,10 @@ def merge(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound):
 
 def comparative_merge_sort(pri_items, sec_items):
     ''' docstring '''
-    pri_aux = []
-    sec_aux = []
-    for i in range(len(pri_items)):
-        pri_aux.append(0)
-        sec_aux.append(0)
-    upperbound = len(pri_items) - 1
-    lowerbound = 0
-    sort(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound)
+    pri_aux = zeros((len(pri_items,) dtype=float))
+    sec_aux = zeros((len(pri_items,) dtype=float))
+
+    sort(pri_items, sec_items, pri_aux, sec_aux, 0, len(pri_items) - 1)
     assert is_sorted(pri_items)
 
 def sort(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound):
