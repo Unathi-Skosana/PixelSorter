@@ -29,8 +29,8 @@ def merge(pri_items, sec_items, pri_aux, sec_aux, lowerbound, upperbound):
 
 def comparative_merge_sort(pri_items, sec_items):
     ''' docstring '''
-    pri_aux = zeros((len(pri_items,) dtype=float))
-    sec_aux = zeros((len(pri_items,) dtype=float))
+    pri_aux = zeros((len(pri_items,), dtype=float))
+    sec_aux = zeros((len(pri_items,), dtype=float))
 
     sort(pri_items, sec_items, pri_aux, sec_aux, 0, len(pri_items) - 1)
     assert is_sorted(pri_items)
