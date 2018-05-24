@@ -20,10 +20,10 @@ class PixelSorter(object):
     def pixel_sorter_middleware(self):
         ''' docstring '''
         ifv           = IFV(self.src_img, self.dest_img, self.sort_criteria)
-        pixel_data    = ifv.get_pixel_data()
-        criteria_data = ifv.get_criteria_data()
-        comparative_merge_sort(criteria_data, pixel_data)
-        ifv.create_sorted_image(criteria_data, pixel_data)
+        #pixel_data    = ifv.get_pixel_data()
+        #criteria_data = ifv.get_criteria_data()
+        #comparative_merge_sort(criteria_data, pixel_data)
+        #ifv.create_sorted_image(criteria_data, pixel_data)
 
 if __name__ == '__main__':
     if len(argv) == 4:
