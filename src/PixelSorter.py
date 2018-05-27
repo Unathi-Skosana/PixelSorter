@@ -1,8 +1,6 @@
 ''' docstring '''
-
-from ComparativeMerge import comparative_merge_sort
 from ImageFeatureVector import ImageFeatureVector as IFV
-from sys import argv, exit
+from sys import (argv, exit)
 
 class PixelSorter(object):
     ''' docstring '''
@@ -19,11 +17,7 @@ class PixelSorter(object):
 
     def pixel_sorter_middleware(self):
         ''' docstring '''
-        ifv           = IFV(self.src_img, self.dest_img, self.sort_criteria)
-        #pixel_data    = ifv.get_pixel_data()
-        #criteria_data = ifv.get_criteria_data()
-        #comparative_merge_sort(criteria_data, pixel_data)
-        #ifv.create_sorted_image(criteria_data, pixel_data)
+        IFV(self.src_img, self.dest_img, self.sort_criteria)
 
 if __name__ == '__main__':
     if len(argv) == 4:
