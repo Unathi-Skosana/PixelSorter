@@ -1,4 +1,8 @@
-# NOTE: This is just a progress Report. Cool Stuff with opencv Algos and Machine Learning Will Come
+# NOTE: This is just a progress Report. Cool Stuff with opencv and Computer Vision Algos and 
+# Machine Learning libraries and aglos  Will Come [NOTE THIS CODE WAS NEVER OPTIMISED. MY MAIN AIM WAS TO MAKE THE
+# PIXEL SORTER WORK]
+
+### Example Images[TODO LIST FOLLOWS BELLOW AND SOME NOTES WRITTEN TO THE FUTURE ME]
 ![Alt text](/sample_results/0.png)
 
 
