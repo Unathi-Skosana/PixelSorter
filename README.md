@@ -1,8 +1,8 @@
-# NOTE: This is just a progress Report. Cool Stuff with opencv and Computer Vision Algos and 
-# Machine Learning libraries and aglos  Will Come [NOTE THIS CODE WAS NEVER OPTIMISED. MY MAIN AIM WAS TO MAKE THE
-# PIXEL SORTER WORK]
+# NOTE: This is just a progress Report. Cool Stuff with Computer Vision Machine Learning libraries and aglos  will follow
+# [NOTE THIS CODE WAS NEVER OPTIMISED. MY MAIN AIM WAS TO MAKE THE PIXEL SORTER WORK]
 
-### Example Images[TODO LIST FOLLOWS BELLOW AND SOME NOTES WRITTEN TO THE FUTURE ME]
+## Example Images [TODO LIST FOLLOWS BELLOW AND SOME NOTES WRITTEN TO THE FUTURE ME THIS CODE CAN NEEDS IMPROVEMENTS]
+
 ![Alt text](/sample_results/0.png)
 
 
@@ -117,3 +117,6 @@
 ### > implement a squre and circle sorter.
 ### > then use SIFT or SURF for object detection and sort the objects identified.
 ### > also it would be cool to sort people or faces, this is possible through obj detection.
+
+## I FEXED IT DURING MY HECTIC SCHEDULE THE TIMING WAS OFF
+# THEY YET TO COME THOUGH ... 
